@@ -11,112 +11,139 @@ import myUtils.ErrorNaiveHandler;
 
 /**
  * @author prost
- *
  */
+
 public class Event extends NodeMultiple {
-	public static final String ERROR_MSG_UNEXPECTED_END = "Sorry, for some unexpected reason the story ends here...";
-	public static final String PROMPT_ANSWER = "Answer: ";
-	public static final String WARNING_MSG_INTEGER_EXPECTED = "Please input a integer within range!";
+    private static int lastId;// static : momune a toute les instance de la classe
 
-	/**
-	 * @return the playerAnswer
-	 */
-	public String getPlayerAnswer() {
-		/* TO BE COMPLETED */
-	}
+    public Event(GUIManager gui, String data) {
+        super();
+        this.gui = gui;
+        this.reader = gui.getInputReader();
+        int id = ++lastId;
+    }
 
-	/**
-	 * @param playerAnswer the playerAnswer to set
-	 */
-	public void setPlayerAnswer(String playerAnswer) {
-		/* TO BE COMPLETED */
-	}
+    public static final String ERROR_MSG_UNEXPECTED_END = "Sorry, for some unexpected reason the story ends here...";
+    public static final String PROMPT_ANSWER = "Answer: ";
+    public static final String WARNING_MSG_INTEGER_EXPECTED = "Please input a integer within range!";
+    private GUIManager gui;
+    private static String PROMPT_ANS = "HOHO";
+    private String playerAnswer;
+    Scanner reader;
+    private int chosenPath;
 
-	/**
-	 * @return the reader
-	 */
-	public Scanner getReader() {
-		/* TO BE COMPLETED */
-	}
+    public run() {
+        gui.println(this.toString());
+        gui.println(PROMPT_ANS);
+        playerAnswer = reader.next();
+        chosenPath = interpretAnswer();
 
-	/**
-	 * @param reader the reader to set
-	 */
-	public void setReader(Scanner reader) {
-		/* TO BE COMPLETED */
-	}
+    }
 
-	/**
-	 * @return the chosenPath
-	 */
-	public int getChosenPath() {
-		/* TO BE COMPLETED */
-	}
+    private int interpretAnswer() {
+        return 0;
+    }
 
-	/**
-	 * @param chosenPath the chosenPath to set
-	 */
-	public void setChosenPath(int chosenPath) {
-		/* TO BE COMPLETED */
-	}
+    /**
+     * @return the playerAnswer
+     */
+    public String getPlayerAnswer() {
+        return playerAnswer;
+    }
 
-	/* Methods */
-	/**
-	 * @see pracHDVELH.NodeMultiple#getData()
-	 */
-	public String getData() {
-		/* TO BE COMPLETED */
-	}
+    /**
+     * @param playerAnswer the playerAnswer to set
+     */
+    public void setPlayerAnswer(String playerAnswer) {
+        this.playerAnswer=playerAnswer;
+    }
 
-	/**
-	 * @see pracHDVELH.NodeMultiple#setData(Object)
-	 * @param data
-	 */
-	public void setData(String data) {
-		/* TO BE COMPLETED */
-	}
+    /**
+     * @return the reader
+     */
+    public Scanner getReader() {
+        return reader;
+    }
 
-	/**
-	 * @see pracHDVELH.NodeMultiple#getDaughter(int)
-	 */
-	@Override
-	public Event getDaughter(int i) {
-		/* TO BE COMPLETED */
-	}
+    /**
+     * @param reader the reader to set
+     */
+    public void setReader(Scanner reader) {
+        this.reader=reader;
+    }
 
-	/**
-	 * @see pracHDVELH.NodeMultiple#setDaughter(NodeMultiple, int)
-	 * @param daughter
-	 * @param i
-	 */
-	public void setDaughter(Event daughter, int i) {
-		/* TO BE COMPLETED */
-	}
+    /**
+     * @return the chosenPath
+     */
+    public int getChosenPath() {
+        return chosenPath;
+    }
 
-	/**
-	 * @return the gui
-	 */
-	public GUIManager getGui() {
-		/* TO BE COMPLETED */
-	}
+    /**
+     * @param chosenPath the chosenPath to set
+     */
+    public void setChosenPath(int chosenPath) {
+        this.chosenPath=chosenPath;
+    }
 
-	/**
-	 * @param gui the gui to set
-	 */
-	public void setGui(GUIManager gui) {
-		/* TO BE COMPLETED */
-	}
+    /* Methods */
 
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		/* TO BE COMPLETED */
-	}
+    /**
+     * @see pracHDVELH.NodeMultiple#getData()
+     */
+    public String getData() {
+        /* TO BE COMPLETED */
+    }
 
-	/* Methods */
-	/* TO BE COMPLETED */
-	
+    /**
+     * @param data
+     * @see pracHDVELH.NodeMultiple#setData(Object)
+     */
+    public void setData(String data) {
+        /* TO BE COMPLETED */
+    }
+
+    /**
+     * @see pracHDVELH.NodeMultiple#getDaughter(int)
+     */
+    @Override
+    public Event getDaughter(int i) {
+        /* TO BE COMPLETED */
+    }
+
+    /**
+     * @param daughter
+     * @param i
+     * @see pracHDVELH.NodeMultiple#setDaughter(NodeMultiple, int)
+     */
+    public void setDaughter(Event daughter, int i) {
+        /* TO BE COMPLETED */
+    }
+
+    /**
+     * @return the gui
+     */
+    public GUIManager getGui() {
+        /* TO BE COMPLETED */
+    }
+
+    /**
+     * @param gui the gui to set
+     */
+    public void setGui(GUIManager gui) {
+        /* TO BE COMPLETED */
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        /* TO BE COMPLETED */
+    }
+
+    /* Methods */
+    /* TO BE COMPLETED */
+
 }
 
 // eof

@@ -65,6 +65,10 @@ public class GUIManager {
 	this.err = err;
 	inputReader = new Scanner(this.in);
   }
+
+    public void println(String toString) {
+        System.out.println(toString);
+    }
 }
 
 // eof

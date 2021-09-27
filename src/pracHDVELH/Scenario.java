@@ -5,6 +5,8 @@
  */
 package pracHDVELH;
 
+import java.util.Scanner;
+
 /**
  * @author prost
  *
@@ -15,10 +17,28 @@ public class Scenario {
 	private Event head;
 	private GUIManager gui;
 
-	/* TO BE COMPLETED */
+
+	public Scenario(GUIManager gui, Event start){
+		this.gui=gui;
+		this.head=start;
+	}
+	public  run(){
+
+		Event nextStep=getHead();
+		while (!nextStep.isFinal()){
+			nextStep.run();
+		}
+		gui.println(nextStep);
+	}
+
+	public Event getHead() {
+		return head;
+	}
 
 	/* MAIN */
 	public static void main(String[] args) {
+		Object x = new NodeMultiple();
+		System.out.println(x.toString());
 		Scenario scenario;
 		GUIManager gui = new GUIManager(System.in, System.out, System.err);
 
@@ -58,7 +78,7 @@ public class Scenario {
 		event3.addDaughter(endEvent);
 		event3.addDaughter(event3);
 
-		/* ******* */
+		//* ******* *//*
 		// **2.3
 		// ***event4
 		// ****event2
